@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+		/>
+		<title>Pizzeria Demand Forecast</title>
+	</head>
+	<body>
+		<nav class="container-fluid">
+			<ul>
+				<li><strong>Pizzeria Sales Data</strong></li>
+			</ul>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Menu</a></li>
+				<li><a href="#" role="button">Contact Us</a></li>
+			</ul>
+		</nav>
+		<main class="container">
+			<div class="grid">
+				<section>
+					<hgroup>
+						<h2>Pizza Sales Forecast</h2>
+						<h3>Enter Historical Sales Data</h3>
+					</hgroup>
+					<form class="grid">
+						<input
+							type="number"
+							id="price"
+							name="price"
+							placeholder="Price per Pizza"
+							aria-label="Pizza Price"
+							required
+						/>
+						<input
+							type="number"
+							id="sales"
+							name="sales"
+							placeholder="Number of Pizzas Sold"
+							aria-label="Pizzas Sold"
+							required
+						/>
+						<button type="submit" onclick="event.preventDefault()">
+							Generate Forecast
+						</button>
+					</form>
+					<h3>7-Day Sales Data</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Date</th>
+								<th>Price</th>
+								<th>Pizzas Sold</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- Data rows will be added here -->
+						</tbody>
+					</table>
+					<h3>Simulated Demand Forecast</h3>
+					<figure>
+						<figcaption>
+							Forecast based on 7-day sales data
+						</figcaption>
+						<div id="forecastGraph"></div>
+					</figure>
+				</section>
+			</div>
+		</main>
+		<section aria-label="Subscribe to Updates">
+			<div class="container">
+				<article>
+					<hgroup>
+						<h2>Get The Latest Updates</h2>
+						<h3>Subscribe to Our Newsletter</h3>
+					</hgroup>
+					<form class="grid">
+						<input
+							type="text"
+							id="firstname"
+							name="firstname"
+							placeholder="Your Name"
+							aria-label="Your Name"
+							required
+						/>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							placeholder="Your Email"
+							aria-label="Your Email"
+							required
+						/>
+						<button type="submit" onclick="event.preventDefault()">
+							Subscribe
+						</button>
+					</form>
+				</article>
+			</div>
+		</section>
+		<footer class="container">
+			<small>
+				<a href="#">Privacy Policy</a> •
+				<a href="#">Terms of Service</a>
+			</small>
+		</footer>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"
+			integrity="sha512-M7nHCiNUOwFt6Us3r8alutZLm9qMt4s9951uo8jqO4UwJ1hziseL6O3ndFyigx6+LREfZqnhHxYjKRJ8ZQ69DQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="index.js"></script>
+	</body>
+</html>
